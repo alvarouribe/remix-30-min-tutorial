@@ -30,7 +30,7 @@ export const loader = async ({
 }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
   const q = url.searchParams.get("q");
-  console.log("SERVER loader q", q);
+  console.log("SERVER: loader q", q);
 
   const contacts = await getContacts(q);
   return json({ contacts, q });
@@ -59,7 +59,7 @@ export default function App() {
   useEffect(() => {
     const searchField = document.getElementById("q");
     if (searchField instanceof HTMLInputElement) {
-      console.log('Client useEffect q', q);
+      console.log('CLIENT: useEffect q', q);
 
       searchField.value = q || "";
     }
