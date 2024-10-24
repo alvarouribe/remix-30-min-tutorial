@@ -27,7 +27,7 @@ export const loader = async ({
   params,
 }: LoaderFunctionArgs) => {
   invariant(params.contactId, "Missing contactId param");
-  console.log(`SERVER getContacts, params.contactId: '${params.contactId}'`);
+  console.log(`SERVER: getContacts, params.contactId: '${params.contactId}'`);
 
   const contact = await getContact(params.contactId);
   if (!contact) {
