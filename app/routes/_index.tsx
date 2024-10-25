@@ -1,3 +1,5 @@
+import MyComponent from "../components/MyComponent";
+
 export default function Index() {
   return (
     <p id="index-page">
@@ -5,6 +7,8 @@ export default function Index() {
       <br />
       Check out{" "}
       <a href="https://remix.run">the docs at remix.run</a>.
+      <br />
+      <MyComponent />
     </p>
   );
 }

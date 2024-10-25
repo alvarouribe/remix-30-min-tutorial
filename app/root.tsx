@@ -16,14 +16,12 @@ import type {
   LoaderFunctionArgs,
 } from "@remix-run/node";
 import { useEffect } from "react";
-
 import appStylesHref from "./app.css?url";
+import { createEmptyContact, getContacts } from "./data";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: appStylesHref },
 ];
-
-import { createEmptyContact, getContacts } from "./data";
 
 export const loader = async ({
   request,
@@ -50,10 +48,6 @@ export default function App() {
     new URLSearchParams(navigation.location.search).has(
       "q"
     );
-  // console.log(`navigation.state: ${navigation.state}`);
-  // contacts.forEach((contact) => {
-  //   console.log(`contact.id: ${contact.id}`);
-  // });
 
   // This will clear the search field if back button is used and the qParam is empty
   useEffect(() => {
